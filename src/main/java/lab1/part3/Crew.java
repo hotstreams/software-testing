@@ -3,12 +3,15 @@ package lab1.part3;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Crew {
-    private ArrayList<Human> team = new ArrayList<>();
+public final class Crew {
+    private final ArrayList<Human> team;
     private Human leader;
-    private HashMap<Human, Vacation> vacations = new HashMap<>();
+    private final HashMap<Human, Vacation> vacations;
 
-    public Crew() {}
+    public Crew() {
+        team = new ArrayList<>();
+        vacations = new HashMap<>();
+    }
 
     public void addCrewMember(Human member) {
         team.add(member);
@@ -32,5 +35,9 @@ public class Crew {
 
     public HashMap<Human, Vacation> getVacations() {
         return vacations;
+    }
+
+    public boolean isAnyoneLeavingTheShip() {
+        return vacations.entrySet().stream().anyMatch(e -> e.getValue().getState() != VacationState.CANCELED);
     }
 }

@@ -5,8 +5,8 @@ import java.time.Duration;
 enum InspectionType { MAINTENANCE, EMERGENCY };
 
 public class Inspection {
-    private Duration duration;
-    private InspectionType type;
+    private final Duration duration;
+    private final InspectionType type;
 
     public Inspection(Duration duration, InspectionType type) {
         this.duration = duration;
@@ -19,13 +19,5 @@ public class Inspection {
 
     public InspectionType getType() {
         return type;
-    }
-
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
-
-    public void setType(InspectionType type) {
-        this.type = type;
     }
 }

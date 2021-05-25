@@ -4,9 +4,9 @@ enum MaritalStatus { MARRIED, DIVORCED, SINGLE };
 enum Wellness { GOOD, BAD, ALIVE, DEAD };
 
 public class Human {
-    private String name;
-    private MaritalStatus status;
-    private Wellness wellness;
+    private final String name;
+    private final MaritalStatus status;
+    private final Wellness wellness;
 
     public Human(String name, MaritalStatus status, Wellness wellness) {
         this.name = name;
@@ -24,5 +24,13 @@ public class Human {
 
     Wellness getWellness() {
         return wellness;
+    }
+
+    public boolean isMarried() {
+        return status == MaritalStatus.MARRIED;
+    }
+
+    public boolean isAlive() {
+        return wellness == Wellness.ALIVE;
     }
 }

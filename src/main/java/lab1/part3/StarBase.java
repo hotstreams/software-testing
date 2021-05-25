@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StarBase {
-    private HashMap<Ship, Inspection> inspections = new HashMap<>();
-    private ArrayList<Ship> ships = new ArrayList<>();
+    private final HashMap<Ship, Inspection> inspections;
+    private final ArrayList<Ship> ships;
 
-    public StarBase() {}
+    public StarBase() {
+        inspections = new HashMap<>();
+        ships = new ArrayList<>();
+    }
 
     public void addShip(Ship ship) {
         ships.add(ship);
@@ -23,5 +26,13 @@ public class StarBase {
 
     public ArrayList<Ship> getShips() {
         return ships;
+    }
+
+    public boolean isAnyoneLanded() {
+        return !ships.isEmpty();
+    }
+
+    public boolean hasEmergencyInspections() {
+        return inspections.entrySet().stream().anyMatch(e -> e.getValue().getType() == InspectionType.EMERGENCY);
     }
 }

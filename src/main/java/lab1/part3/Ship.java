@@ -1,13 +1,19 @@
 package lab1.part3;
 
+import java.time.Period;
+
 enum EngineState { HYPER, BASIC };
 
 public class Ship {
-    private EngineState engineState;
-    private Star target;
-    private Crew crew;
+    private final EngineState engineState;
+    private final Star target;
+    private final Crew crew;
 
     public Ship(EngineState engineState, Star target, Crew crew) {
+        if (crew == null) {
+            throw new IllegalArgumentException();
+        }
+
         this.engineState = engineState;
         this.target = target;
         this.crew = crew;
@@ -17,23 +23,11 @@ public class Ship {
         return engineState;
     }
 
-    public void setEngineState(EngineState engineState) {
-        this.engineState = engineState;
-    }
-
     public Star getTarget() {
         return target;
     }
 
-    public void setTarget(Star target) {
-        this.target = target;
-    }
-
     public Crew getCrew() {
         return crew;
-    }
-
-    public void setCrew(Crew crew) {
-        this.crew = crew;
     }
 }

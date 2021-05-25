@@ -1,8 +1,8 @@
 package lab1.part3;
 
 public class Star {
-    private String name;
-    private StarBase base;
+    private final String name;
+    private final StarBase base;
 
     public Star(String name, StarBase base) {
         this.name = name;
@@ -12,16 +12,11 @@ public class Star {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public StarBase getBase() {
         return base;
     }
 
-    public void setBase(StarBase base) {
-        this.base = base;
+    public boolean hasBase() {
+        return base != null;
     }
 }

@@ -7,6 +7,12 @@ public class QSortTest {
     private QSort sorter;
 
     @Test
+    public void testCreation() {
+        assertThrows(IllegalArgumentException.class, () -> new QSort(new int[] {}));
+        assertThrows(IllegalArgumentException.class, () -> new QSort(null));
+    }
+
+    @Test
     public void testSortIterations() {
         final int[] array = new int[] {3, 7, 8, 5, 2, 1, 9, 5, 4};
         sorter = new QSort(array);
