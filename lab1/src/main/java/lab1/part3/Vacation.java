@@ -1,7 +1,5 @@
 package lab1.part3;
 
-import javax.security.auth.login.LoginException;
-import java.time.Duration;
 import java.util.Date;
 
 enum VacationState { PLANNED, CANCELED }

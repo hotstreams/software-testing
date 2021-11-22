@@ -2,7 +2,6 @@ package lab1.part3;
 
 import java.sql.Date;
 import java.time.Duration;
-import java.time.Period;
 
 public class Scene {
     private Ship ship;

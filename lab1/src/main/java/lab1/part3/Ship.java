@@ -1,7 +1,5 @@
 package lab1.part3;
 
-import java.time.Period;
-
 enum EngineState { HYPER, BASIC };
 
 public class Ship {

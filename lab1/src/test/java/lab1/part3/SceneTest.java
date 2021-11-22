@@ -1,6 +1,5 @@
 package lab1.part3;
 
-import lab1.part2.QSort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
